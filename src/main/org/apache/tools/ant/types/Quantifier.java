@@ -171,7 +171,7 @@ public class Quantifier extends EnumeratedAttribute {
     public boolean evaluate(int t, int f) {
         int index = getIndex();
         if (index == -1) {
-            throw new BuildException("Quantifier value not set.");
+            throw new IllegalArgumentException("Quantifier value not set.");
         }
         return Predicate.get(VALUES[index]).eval(t, f);
     }
